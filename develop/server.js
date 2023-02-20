@@ -2,7 +2,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const {v4:uuidv4} = require('uuid')
+const { v4:uuidv4 }  = require('uuid')
 
 const app = express();
 const PORT = process.env.PORT ||  3000;
@@ -11,10 +11,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
-app.get('/', (req,res) => res.sendFile(path.join(__dirname, './develop/notes.html')));
+app.get('/', (req,res) => res.sendFile(path.join(__dirname, '/develop/index.html')));
 //routing
-app.get('api/notes', (req,res) =>{
-    const notes = fs.readFileSync(path.join(__dirname, './develop/dj.json'), 'utf-8');
+app.get('/notes', (req,res) =>{
+    const notes = fs.readFileSync(path.join(__dirname, './develop/notes.html'), 'utf-8');
     const parseNotes = json.parse(notes);
     res.json(parseNotes);
 });
