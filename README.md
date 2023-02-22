@@ -7,3 +7,4 @@ With the usage of the Express, npm package, we are able to create an application
 ## Installation
 
 No installation necesssary, follow link and click on "Get Started" to add new note.
+https://byaylin.github.io/note-taker/
